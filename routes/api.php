@@ -5,9 +5,15 @@ use App\Http\Controllers\Api\ShortcodeController;
 
 Route::get('/posts', [ShortcodeController::class, 'index']);
 Route::get('/posts/{id}', [ShortcodeController::class, 'show']);
+Route::put('/posts/{id}', [ShortcodeController::class, 'update']);
+Route::delete('/posts/{id}', [ShortcodeController::class, 'destroy']);
 
 Route::post('/posts', [ShortcodeController::class, 'store']);
 Route::post('/parse', [ShortcodeController::class, 'parse']);
+
+Route::post('/files/upload', [ShortcodeController::class, 'upload']);
+Route::get('/files', [ShortcodeController::class, 'files']);
+Route::post('/files/{id}', [ShortcodeController::class, 'fileDelete']);
 
 // History Routes
 
